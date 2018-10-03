@@ -19,10 +19,12 @@ const userSchema = new mongoose.Schema({
   profileImageUrl: {
     type: String
   },
-  messages: [{
+  messages: [
+    {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Messages"
-  }]
+      ref: "Message"
+    }
+  ]
 });
 
 userSchema.pre("save", async function(next) {
