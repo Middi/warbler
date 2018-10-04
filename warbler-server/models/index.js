@@ -1,7 +1,8 @@
+require("dotenv").load();
 const mongoose = require("mongoose");
 mongoose.set("debug", true);
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/warbler", {
+mongoose.connect(process.env.DB, {
   keepAlive: true
 });
 
